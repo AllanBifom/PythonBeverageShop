@@ -1,0 +1,19 @@
+{% extends 'base.html'%}
+{% block content %}
+<h1>
+    Allan's Beverage Shop
+<div class="row" >
+    {% for beverage in  beverage%}
+        <div class = "column">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ beverage.picture }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ beverage.name }}</h5>
+                    <p class="card-text"> ${{ beverage.price}}</p>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

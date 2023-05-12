@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Beverage
+
 
 def home(request):
-    return HttpResponse('<h1>Home Page </h1>')
+    beverage = Beverage.objects.all()
+    return render(request, 'homePage.html', {'beverage': beverage})
